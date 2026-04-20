@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-auth-jvm:3.4.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-client-auth-jvm" version="3.4.2" baseVersion="3.4.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-auth-jvm/3.4.2/8d277569d9f6e8e1f038e418430a537d357cf827/ktor-client-auth-jvm-3.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-client-auth-jvm/3.4.2/e4d450766c635cadb020f6e0c540fbb6490695df/ktor-client-auth-jvm-3.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
