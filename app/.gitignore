@@ -23,6 +23,7 @@ app/build/
 .idea/modules.xml
 .idea/navEditor.xml
 .idea/deploymentTargetDropDown.xml
+**/*.lock
 
 ############################
 # Local configs (nunca commitar!)
