@@ -27,13 +27,12 @@ import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
 
 @Composable
 fun SplashRoute() {
+    SplashScreen()
 
 }
 
 @Composable
-fun SplashScreen(
-    modifier: Modifier = Modifier,
-) {
+fun SplashScreen(modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -42,33 +41,22 @@ fun SplashScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(
-                R.drawable.logo
-            ), contentDescription = null
-        )
+        Image(painter = painterResource(R.drawable.logo), contentDescription = null)
 
-        Spacer(
-            modifier = Modifier.height(
-                77.dp
-            )
-        )
+        Spacer(modifier = Modifier.height(77.dp))
 
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                painter = painterResource(R.drawable.ic_safety), contentDescription = null
-            )
+            Image(painter = painterResource(R.drawable.ic_safety), contentDescription = null)
 
             Spacer(modifier = Modifier.width(8.dp))
 
 
             Text(
                 text = stringResource(R.string.splash_safety_info),
-                color = Color.Black,
+                color = Color.White,
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.bodyMedium
             )
-
         }
     }
 

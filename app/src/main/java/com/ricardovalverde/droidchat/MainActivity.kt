@@ -8,7 +8,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.ricardovalverde.droidchat.navigation.ChatNavHost
+import com.ricardovalverde.droidchat.ui.ChatApp
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
 
 class MainActivity :
@@ -16,13 +16,11 @@ class MainActivity :
     override fun onCreate(
         savedInstanceState: Bundle?
     ) {
-        super.onCreate(
-            savedInstanceState
-        )
+        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             DroidChatTheme {
-                ChatNavHost()
+                ChatApp()
             }
         }
     }
@@ -39,14 +37,10 @@ fun Greeting(
     )
 }
 
-@Preview(
-    showBackground = true
-)
+@Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     DroidChatTheme {
-        Greeting(
-            "Android"
-        )
+        Greeting("Android")
     }
 }
