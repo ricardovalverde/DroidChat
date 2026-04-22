@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-components:19.0.0@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/9.3.1/transforms/446ea2f48950093f5579c9864fbf2a53/transformed/firebase-components-19.0.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/9.4.1/transforms/ac681ad4dd5423fea40ad116934a14aa/transformed/firebase-components-19.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/9.3.1/transforms/446ea2f48950093f5579c9864fbf2a53/transformed/firebase-components-19.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/9.3.1/transforms/446ea2f48950093f5579c9864fbf2a53/transformed/firebase-components-19.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/9.4.1/transforms/ac681ad4dd5423fea40ad116934a14aa/transformed/firebase-components-19.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/9.4.1/transforms/ac681ad4dd5423fea40ad116934a14aa/transformed/firebase-components-19.0.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

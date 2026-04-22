@@ -1,6 +1,6 @@
 [versions]
 accompanistPermissions = "0.37.3"
-agp = "9.1.1"
+agp = "9.2.0"
 coilCompose = "2.7.0"
 composeShimmer = "1.4.0"
 coreSplashscreen = "1.2.0"
