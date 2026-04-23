@@ -1,15 +1,12 @@
 package com.ricardovalverde.droidchat.ui.components
 
-import android.R.attr.text
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
@@ -21,7 +18,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -31,8 +27,6 @@ import androidx.compose.ui.unit.dp
 import com.ricardovalverde.droidchat.R
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
 import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShape
-import org.w3c.dom.Text
-import java.nio.file.WatchEvent
 
 @Composable
 fun PrimaryTextField(
