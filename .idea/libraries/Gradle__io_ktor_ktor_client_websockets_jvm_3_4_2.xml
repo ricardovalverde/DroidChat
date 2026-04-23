@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ktor:ktor-client-websockets-jvm:3.4.2" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="io.ktor" artifactId="ktor-client-websockets-jvm" version="3.4.2" baseVersion="3.4.2" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/caches/modules-2/files-2.1/io.ktor/ktor-client-websockets-jvm/3.4.2/6961e4124df1952a15fcfb1c9948be5f8ac1e1b4/ktor-client-websockets-jvm-3.4.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/ms-11.0.28/Contents/Home/caches/modules-2/files-2.1/io.ktor/ktor-client-websockets-jvm/3.4.2/d2442500ed8df341322651a00b716cf873a2373d/ktor-client-websockets-jvm-3.4.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
