@@ -12,11 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -26,6 +21,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ricardovalverde.droidchat.R
 import com.ricardovalverde.droidchat.ui.components.PrimaryButtonScreen
 import com.ricardovalverde.droidchat.ui.components.PrimaryTextField
@@ -33,16 +29,23 @@ import com.ricardovalverde.droidchat.ui.theme.BackgroundGradient
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
 
 @Composable
-fun SignInRoute() {
-    SignInScreen()
+fun SignInRoute(
+    viewModel: SignInViewModel = viewModel()
+) {
+    val formState = viewModel.formState
+
+    SignInScreen(
+        formState = formState,
+        onFormEvent = viewModel::onFormEvent
+    )
 }
 
 @Composable
-fun SignInScreen(modifier: Modifier = Modifier) {
-
-    var email by rememberSaveable { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-    var isLoading by remember { mutableStateOf(false) }
+fun SignInScreen(
+    modifier: Modifier = Modifier,
+    formState: SignInFormState,
+    onFormEvent: (SignInFormEvent) -> Unit
+) {
 
 
     Column(
@@ -60,24 +63,28 @@ fun SignInScreen(modifier: Modifier = Modifier) {
 
         PrimaryTextField(
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.spacing_medium)),
-            value = email,
+            value = formState.email,
             placeholder = stringResource(R.string.feature_login_email),
             leadingIcon = R.drawable.ic_envelope,
             keyboardType = KeyboardType.Email,
             imeAction = ImeAction.Next,
-            onValueChange = { email = it }
+            onValueChange = {
+                onFormEvent(SignInFormEvent.EmailChanged(it))
+            }
         )
 
         Spacer(modifier = Modifier.height(14.dp))
 
         PrimaryTextField(
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.spacing_medium)),
-            value = password,
+            value = formState.password,
             placeholder = stringResource(R.string.feature_sign_up_password),
             leadingIcon = R.drawable.ic_lock,
             keyboardType = KeyboardType.Password,
             imeAction = ImeAction.Done,
-            onValueChange = { password = it }
+            onValueChange = {
+                onFormEvent(SignInFormEvent.PasswordChanged(it))
+            }
         )
 
         Spacer(modifier = Modifier.height(98.dp))
@@ -85,9 +92,10 @@ fun SignInScreen(modifier: Modifier = Modifier) {
         PrimaryButtonScreen(
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.spacing_medium)),
             text = stringResource(R.string.feature_login_button),
-            onClick = { isLoading = !isLoading },
-            isLoading = isLoading
-
+            isLoading = formState.isLoading,
+            onClick = {
+                onFormEvent(SignInFormEvent.Submit)
+            },
         )
     }
 }
@@ -96,6 +104,9 @@ fun SignInScreen(modifier: Modifier = Modifier) {
 @Preview
 fun SignInScreenPreview() {
     DroidChatTheme {
-        SignInScreen()
+        SignInScreen(
+            formState = SignInFormState(),
+            onFormEvent = {}
+        )
     }
 }
