@@ -68,6 +68,9 @@ fun SignInScreen(
             leadingIcon = R.drawable.ic_envelope,
             keyboardType = KeyboardType.Email,
             imeAction = ImeAction.Next,
+            errorMessage = formState.emailError?.let {
+                stringResource(it)
+            },
             onValueChange = {
                 onFormEvent(SignInFormEvent.EmailChanged(it))
             }
@@ -82,6 +85,9 @@ fun SignInScreen(
             leadingIcon = R.drawable.ic_lock,
             keyboardType = KeyboardType.Password,
             imeAction = ImeAction.Done,
+            errorMessage = formState.passwordError?.let {
+                stringResource(it)
+            },
             onValueChange = {
                 onFormEvent(SignInFormEvent.PasswordChanged(it))
             }

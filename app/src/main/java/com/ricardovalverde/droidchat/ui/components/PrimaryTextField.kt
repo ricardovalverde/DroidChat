@@ -103,9 +103,10 @@ fun PrimaryTextField(
 
         errorMessage?.let {
             Text(
-                modifier = Modifier.padding(16.dp),
-                text = "Senha Obrigatória",
-                color = MaterialTheme.colorScheme.error
+                modifier = Modifier.padding(start = 16.dp, top = 8.dp),
+                text = it,
+                color = MaterialTheme.colorScheme.error,
+                style = MaterialTheme.typography.labelMedium
             )
         }
     }
@@ -124,6 +125,21 @@ fun PrimaryTextFieldPreview() {
             onValueChange = { },
             leadingIcon = R.drawable.ic_envelope,
             keyboardType = KeyboardType.Email
+        )
+    }
+}
+
+@Composable
+@Preview
+fun PrimaryTextFieldErrorPreview() {
+    DroidChatTheme {
+        PrimaryTextField(
+            placeholder = "Email",
+            value = "",
+            onValueChange = { },
+            leadingIcon = R.drawable.ic_envelope,
+            keyboardType = KeyboardType.Email,
+            errorMessage = "Email Inválido"
         )
     }
 }
