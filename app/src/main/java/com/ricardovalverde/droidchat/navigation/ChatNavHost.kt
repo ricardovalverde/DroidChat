@@ -1,10 +1,13 @@
 package com.ricardovalverde.droidchat.navigation
 
+import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
+import com.ricardovalverde.droidchat.navigation.extension.slideInTo
+import com.ricardovalverde.droidchat.navigation.extension.slideOutTo
 import com.ricardovalverde.droidchat.ui.feature.signIn.SignInRoute
 import com.ricardovalverde.droidchat.ui.feature.splash.SplashRoute
 import kotlinx.serialization.Serializable
@@ -42,13 +45,27 @@ fun ChatNavHost() {
             )
         }
 
-        composable<SignInNav> {
+        composable<SignInNav>(
+            enterTransition = {
+                this.slideInTo(AnimatedContentTransitionScope.SlideDirection.Right)
+            },
+            exitTransition = {
+                this.slideOutTo(AnimatedContentTransitionScope.SlideDirection.Left)
+            }
+        ) {
             SignInRoute(navigateToSignUp = {
                 navController.navigate(route = SignUpNav)
             })
         }
 
-        composable<SignUpNav> {
+        composable<SignUpNav>(
+            enterTransition = {
+                this.slideInTo(AnimatedContentTransitionScope.SlideDirection.Left)
+            },
+            exitTransition = {
+                this.slideOutTo(AnimatedContentTransitionScope.SlideDirection.Left)
+            }
+        ) {
 
         }
 
