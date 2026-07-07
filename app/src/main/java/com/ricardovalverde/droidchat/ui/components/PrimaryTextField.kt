@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,16 +18,16 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ricardovalverde.droidchat.R
+import com.ricardovalverde.droidchat.ui.extension.getVisualTransformationForPassword
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
-import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShape
+import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeTextField
 
 @Composable
 fun PrimaryTextField(
@@ -49,19 +50,21 @@ fun PrimaryTextField(
 
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShapeTextField,
             singleLine = true,
             value = value,
-            shape = RoundedCornerShape,
             placeholder = { Text(text = placeholder) },
             onValueChange = onValueChange,
             keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
-            visualTransformation =
-                if (!passwordVisibility && keyboardType == KeyboardType.Password) PasswordVisualTransformation() else VisualTransformation.None,
+            visualTransformation = keyboardType.getVisualTransformationForPassword(
+                passwordVisibility
+            ),
             leadingIcon = {
                 leadingIcon?.let {
                     Icon(
+                        modifier = Modifier.size(20.dp),
                         painter = painterResource(leadingIcon),
-                        tint = MaterialTheme.colorScheme.primary,
+                        tint = Color.Black.copy(alpha = 0.8f),
                         contentDescription = null
                     )
                 }
@@ -110,8 +113,6 @@ fun PrimaryTextField(
             )
         }
     }
-
-
 }
 
 
@@ -137,7 +138,7 @@ fun PrimaryTextFieldErrorPreview() {
             placeholder = "Email",
             value = "",
             onValueChange = { },
-            leadingIcon = R.drawable.ic_envelope,
+            leadingIcon = R.drawable.ic_email,
             keyboardType = KeyboardType.Email,
             errorMessage = "Email Inválido"
         )

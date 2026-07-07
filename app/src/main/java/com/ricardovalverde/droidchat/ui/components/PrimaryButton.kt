@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
-import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShape
+import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeButton
 
 @Composable
 fun PrimaryButtonScreen(
@@ -36,7 +36,7 @@ fun PrimaryButtonScreen(
             .height(54.dp),
         onClick = onClick,
         enabled = !isLoading,
-        shape = if (!isLoading) RoundedCornerShape else ButtonDefaults.shape,
+        shape = if (!isLoading) RoundedCornerShapeButton else ButtonDefaults.shape,
         colors = ButtonDefaults.buttonColors(
             containerColor = MaterialTheme.colorScheme.primary,
             contentColor = MaterialTheme.colorScheme.onPrimary,
