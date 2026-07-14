@@ -34,7 +34,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ricardovalverde.droidchat.R
-import com.ricardovalverde.droidchat.ui.components.PrimaryButtonScreen
+import com.ricardovalverde.droidchat.ui.components.PrimaryButton
 import com.ricardovalverde.droidchat.ui.components.PrimaryTextField
 import com.ricardovalverde.droidchat.ui.theme.BackgroundGradient
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
@@ -110,7 +110,7 @@ fun SignInScreen(
 
         Spacer(modifier = Modifier.height(98.dp))
 
-        PrimaryButtonScreen(
+        PrimaryButton(
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.spacing_medium)),
             text = stringResource(R.string.feature_login_button),
             isLoading = formState.isLoading,

@@ -22,7 +22,7 @@ import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
 import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeButton
 
 @Composable
-fun PrimaryButtonScreen(
+fun PrimaryButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit,
     text: String,
@@ -69,16 +69,16 @@ fun PrimaryButtonScreen(
 
 @Composable
 @Preview
-fun PrimaryButtonScreenPreview() {
+fun PrimaryButtonPreview() {
     DroidChatTheme {
-        PrimaryButtonScreen(text = "Teste SignIn", onClick = {}, isLoading = false)
+        PrimaryButton(text = "Teste SignIn", onClick = {}, isLoading = false)
     }
 }
 
 @Composable
 @Preview
-fun PrimaryButtonScreenPreviewLoading() {
+fun PrimaryButtonPreviewLoading() {
     DroidChatTheme {
-        PrimaryButtonScreen(text = "Teste SignIn", onClick = {}, isLoading = true)
+        PrimaryButton(text = "Teste SignIn", onClick = {}, isLoading = true)
     }
 }

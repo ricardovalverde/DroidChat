@@ -9,6 +9,7 @@ import androidx.navigation.navOptions
 import com.ricardovalverde.droidchat.navigation.extension.slideInTo
 import com.ricardovalverde.droidchat.navigation.extension.slideOutTo
 import com.ricardovalverde.droidchat.ui.feature.signIn.SignInRoute
+import com.ricardovalverde.droidchat.ui.feature.signUp.SignUpRoute
 import com.ricardovalverde.droidchat.ui.feature.splash.SplashRoute
 import kotlinx.serialization.Serializable
 
@@ -63,12 +64,10 @@ fun ChatNavHost() {
                 this.slideInTo(AnimatedContentTransitionScope.SlideDirection.Left)
             },
             exitTransition = {
-                this.slideOutTo(AnimatedContentTransitionScope.SlideDirection.Left)
+                this.slideOutTo(AnimatedContentTransitionScope.SlideDirection.Right)
             }
         ) {
-
+            SignUpRoute()
         }
-
     }
-
 }

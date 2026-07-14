@@ -1,11 +1,13 @@
 package com.ricardovalverde.droidchat.ui.components
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Icon
@@ -29,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.ricardovalverde.droidchat.R
 import com.ricardovalverde.droidchat.ui.extension.getVisualTransformationForPassword
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
+import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeTextField
 
 @Composable
 fun SecondaryTextField(
@@ -46,7 +49,13 @@ fun SecondaryTextField(
     var passwordVisibility by remember { mutableStateOf(false) }
 
     BasicTextField(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .border(
+                color = MaterialTheme.colorScheme.secondary,
+                width = 1.dp,
+                shape = RoundedCornerShapeTextField
+            ),
         value = inputText,
         singleLine = true,
         maxLines = 1,
@@ -73,7 +82,11 @@ fun SecondaryTextField(
                         .fillMaxWidth()
                         .weight(1f)
                 ) {
-                    Text(text = label, style = MaterialTheme.typography.bodyMedium)
+                    Text(
+                        modifier = Modifier.padding(start = 16.dp),
+                        text = label,
+                        style = MaterialTheme.typography.bodyMedium
+                    )
 
                     Spacer(modifier = Modifier.height(15.dp))
 
