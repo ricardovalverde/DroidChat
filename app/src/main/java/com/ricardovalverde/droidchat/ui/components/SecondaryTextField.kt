@@ -38,7 +38,8 @@ fun SecondaryTextField(
     modifier: Modifier = Modifier,
     label: String,
     value: String,
-    extraText: String,
+    extraText: String? = null,
+    errorText: String? = null,
     keyboardType: KeyboardType = KeyboardType.Text,
     imeAction: ImeAction = ImeAction.Next,
     onValueChange: (String) -> Unit
@@ -112,6 +113,13 @@ fun SecondaryTextField(
                         )
                     }
                 }
+
+
+                /*Aqui vai bloco de errorText, caso nao seja nulo
+                *
+                *errorText?.let { Text(text = it, color = MaterialTheme.colorScheme.error) }
+                *
+                * */
 
             }
         }
