@@ -53,6 +53,16 @@ fun PrimaryTextField(
             shape = RoundedCornerShapeTextField,
             singleLine = true,
             value = value,
+            supportingText = {
+                errorMessage?.let {
+                    Text(
+                        modifier = Modifier.padding(start = 16.dp, top = 8.dp),
+                        text = it,
+                        color = MaterialTheme.colorScheme.error,
+                        style = MaterialTheme.typography.labelMedium
+                    )
+                }
+            },
             placeholder = { Text(text = placeholder) },
             onValueChange = onValueChange,
             keyboardOptions = KeyboardOptions(keyboardType = keyboardType, imeAction = imeAction),
@@ -104,14 +114,6 @@ fun PrimaryTextField(
         )
 
 
-        errorMessage?.let {
-            Text(
-                modifier = Modifier.padding(start = 16.dp, top = 8.dp),
-                text = it,
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.labelMedium
-            )
-        }
     }
 }
 

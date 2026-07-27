@@ -27,7 +27,8 @@ private val DarkColorScheme =
         inverseSurface = Color.White,
         inverseOnSurface = Color.Black,
         error = ColorError,
-    )
+
+        )
 
 private val LightColorScheme =
     lightColorScheme(

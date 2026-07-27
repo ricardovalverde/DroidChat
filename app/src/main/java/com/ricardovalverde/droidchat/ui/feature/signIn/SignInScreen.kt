@@ -42,7 +42,9 @@ import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeButton
 
 @Composable
 fun SignInRoute(
-    viewModel: SignInViewModel = viewModel(),
+    viewModel: SignInViewModel = viewModel {
+        SignInViewModel(formValidator = SignInValidator())
+    },
     navigateToSignUp: () -> Unit
 ) {
     val formState = viewModel.formState
@@ -64,7 +66,7 @@ fun SignInScreen(
 
 
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxSize()
             .background(brush = BackgroundGradient)
             .imePadding()

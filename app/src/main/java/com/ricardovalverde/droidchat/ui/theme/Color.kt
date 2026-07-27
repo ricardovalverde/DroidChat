@@ -20,7 +20,7 @@ val Neutral90 = Color(0xFFe1e3e3)
 val Surface = Color(0xFFfafdfd)
 val Grey1 = Color(0xFFeff0f1)
 
-val ColorSuccess = Color(0xFF2E9000)
+val ColorSuccess = Color(0xFF8BC34A)
 val ColorError = Color(0xFFF24E1E)
 
 val BackgroundGradient = Brush.verticalGradient(

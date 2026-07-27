@@ -14,5 +14,7 @@ data class SignInFormState(
     @field:StringRes
     val passwordError: Int? = null,
 
+    val hasError: Boolean = false,
+
     val isLoading: Boolean = false
 )
