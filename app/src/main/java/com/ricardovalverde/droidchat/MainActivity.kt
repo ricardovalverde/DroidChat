@@ -8,11 +8,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.graphics.toColorInt
 import com.ricardovalverde.droidchat.ui.ChatApp
 import com.ricardovalverde.droidchat.ui.theme.DroidChatTheme
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity :
+@AndroidEntryPoint
+class MainActivity : ComponentActivity() {
 
-
-ComponentActivity() {
     override fun onCreate(
         savedInstanceState: Bundle?
     ) {
