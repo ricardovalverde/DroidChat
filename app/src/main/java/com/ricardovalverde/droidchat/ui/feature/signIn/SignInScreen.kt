@@ -32,7 +32,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.ricardovalverde.droidchat.R
 import com.ricardovalverde.droidchat.ui.components.PrimaryButton
 import com.ricardovalverde.droidchat.ui.components.PrimaryTextField
@@ -42,9 +42,7 @@ import com.ricardovalverde.droidchat.ui.theme.RoundedCornerShapeButton
 
 @Composable
 fun SignInRoute(
-    viewModel: SignInViewModel = viewModel {
-        SignInViewModel(formValidator = SignInValidator())
-    },
+    viewModel: SignInViewModel = hiltViewModel(),
     navigateToSignUp: () -> Unit
 ) {
     val formState = viewModel.formState
